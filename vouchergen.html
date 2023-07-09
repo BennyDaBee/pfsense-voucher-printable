@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" /> 
+<title>Printable pfSense Voucher Generator</title>
+<style type="text/css">
+    @page {
+            size: A4 landscape;
+    }
+    body {
+            font-family: verdana, arial, sans-serif ;
+            font-size: 12px ;
+            }
+    #maintable {
+        border-spacing: 15px;
+        display: none;
+    }
+    td.voucher  {
+            border-top: 1px dotted #999999 ;
+            border-bottom: 1px dotted #999999 ;
+            border-left: 1px dotted  #999999;
+            border-right: 1px dotted  #999999;
+            padding: 20px 20px 10px 10px;
+            text-align: left ;
+            <!-- background-image: url(data:image/png;base64,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);
+            -->
+	    background-position: right top;
+            background-size: 126px 60px;
+            background-repeat: no-repeat;
+            background-origin: content-box;
+    }
+    tr.voucher {
+            page-break-inside: avoid;
+       }
+    #tpl {
+        display: none;
+    }
+@media print {
+    #generator {
+        display: none;
+    }
+    @page {
+            size: A4 landscape;
+    }
+}
+</style>
+</head>
+
+<body>
+<div id="generator">
+<h1>Printable pfSense Voucher Generator</h1>
+
+<form id="form">
+<textarea id="vouchers" rows="40" placeholder="Voucher Codes. 1 Per line">
+</textarea></br>
+<textarea id="time" rows="1" placeholder="Duration of Vouchers"></textarea></br>
+<textarea id="ssid" rows="1" placeholder="SSID of Network"></textarea></br>
+<button type="button" id="button">Generate</button>
+<button type="button" id="print" disabled>Print</button>
+</form>
+
+</div>
+<div id="tpl">
+       <h1>WiFi Guest Access</h1>
+       <table>
+        <tr><th>SSID:</th><td id="net">ENTER SSID</td></tr>
+        <tr><th>Voucher:</th><td id="code">FIXME</td></tr>
+       </table>
+       <p>
+       This voucher is valid for <strong id="dur">ENTER TIME</strong> after its first usage.<br />
+       Connect to the WiFi and try to open any http website (e.g. neverssl.com) to enter the voucher.
+       </p>
+   </div>
+
+<table id="maintable">
+<tbody id=table>
+</tbody>
+</table>
+
+<script>
+document.getElementById("print").addEventListener('click',printEm);
+document.getElementById("button").addEventListener('click',buildEm);
+document.getElementById("vouchers").addEventListener('focus',clearEm);
+document.getElementById("time").addEventListener('focus',clearEm);
+document.getElementById("ssid").addEventListener('focus',clearEm);
+
+function clearEm() {
+    var vouchers=document.getElementById("vouchers");
+    if(!vouchers.value.search("\" voucher1")) {
+        vouchers.value="";
+    }
+}
+
+function printEm() {
+    window.print();
+}
+
+function buildEm() {
+    var vouchers=document.getElementById("vouchers").value.trim().split('\n');
+    const time=document.getElementById("time").value;
+    const ssid=document.getElementById("ssid").value;
+
+    if (vouchers.length%2) {
+        alert("Use an even number of voucher codes!");
+        return 0;
+    } else if (time == "") {
+	alert("Please enter a valid voucher duration!");
+        return 0;
+    } else if (ssid == "") {
+	alert("Please enter a valid SSID!");
+        return 0;
+    }
+
+   console.log(time)
+	
+
+    var tpl=document.getElementById("tpl");
+    var code=document.getElementById("code");
+    var table=document.getElementById("table");
+    var tr;
+
+
+    document.getElementById("maintable").style.display="none";
+    document.getElementById("table").innerHTML="";
+
+    for(var i=0;i<vouchers.length;i++) {
+        if(!(i%2)) {
+            tr=document.createElement("tr");
+            tr.className="voucher";
+        }
+
+        // pfsense prints the voucher codes as something like
+        //   " aaaaaaaaaa"
+        // into the csv -> account for this!
+        code.innerHTML=vouchers[i].replace(/"/g,'').trim();
+	dur.innerHTML=time;
+	net.innerHTML=ssid;
+
+        var foo = tpl.cloneNode(true);
+        foo.style.display="block";
+        foo.removeAttribute("id");
+        var td=document.createElement("td");
+        td.className="voucher";
+        td.appendChild(foo);
+        tr.appendChild(td);
+
+        if((i%2)) {
+            table.appendChild(tr);
+        }
+
+    }
+    document.getElementById("maintable").style.display="block";
+    document.getElementById("print").disabled = false;
+}
+
+</script>
+
+</body>
+</html>
